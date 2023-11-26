@@ -24,7 +24,7 @@ public class FirstTest {
 		
 		driver.findElement(By.name("password")).sendKeys("UvavUpu");
 		
-		//login submit
+		//login
 		
 		driver.findElement(By.xpath("//input[@type='submit']")).click();
 		
