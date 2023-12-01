@@ -60,21 +60,32 @@ public class FirstTest {
         if ("Guru99 Bank Manager HomePage".equals(expectedOutcome)) {
             // Check for successful login by comparing titles
             String actualTitle = driver.getTitle();
+            
             if (expectedOutcome.equals(actualTitle)) {
+            	
                 System.out.println("Login Successful for Username: " + username);
+                
             } else {
+            	
                 System.out.println("Login Failed for Username: " + username);
+                
             }
+            
         } else {
+        	
             // Check for alert message in case of unsuccessful login
             Alert alert = driver.switchTo().alert();
             String actualAlertMessage = alert.getText();
             if (expectedOutcome.equals(actualAlertMessage)) {
+            	
                 System.out.println("Login Failed for Username: " + username + ". Alert message: " + actualAlertMessage);
                 alert.accept();
                 driver.switchTo().defaultContent(); // Switch back to the main window
+                
             } else {
+            	
                 System.out.println("Unexpected outcome for Username: " + username);
+                
             }
         }
     }
